@@ -1,23 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Timeline from 'react-native-timeline-listview';
+import Trips from './Components/Trips';
+import Logout from './Components/Logout';
+import styles from './styles'
+
+
+
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Pen!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Trips />
+        <Logout />
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
