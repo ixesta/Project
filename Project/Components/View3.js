@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert } from 'react-native';
 import { Icon } from 'react-native-elements';
+import NavigationBar from 'react-native-navbar';
 
 const list = [
   {
