@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert } from 'react-native';
 import { Icon } from 'react-native-elements';
 import NavigationBar from 'react-native-navbar';
+import SelectHoursDaily from './SelectHoursDaily';
 
 const list = [
   {
@@ -45,17 +46,23 @@ const list = [
   }
 ]
 
-const win = Dimensions.get('window')
+let selectedCity = {
+  name: 'Manchester',
+  avatar_url: 'http://loremflickr.com/640/480'
+
+}
 
 
 export default class View3 extends Component {
   render() {
     return (
+
       <View>
+        <Image />
+        <SelectHoursDaily />
         <ScrollView>
           {list.map((city, i) => {
             return (
-
               <ImageBackground
                 key={i}
                 style={styles.image}
@@ -79,7 +86,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     alignSelf: 'stretch',
-    width: win.width,
     height: 150,
+    borderBottomWidth: 1,
+    borderBottomColor: 'white'
   }
 });
