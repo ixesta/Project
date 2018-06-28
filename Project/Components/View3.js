@@ -62,7 +62,9 @@ export default class View3 extends Component {
       <View>
         <SelectHoursDaily />
         <ImageBackground style={styles.city} source={{ uri: header.avatar_url }} >
-          <Icon name='search' color='#00aced' type='FontAwesome' style={styles.searchIcon} />
+          <TouchableHighlight onPress={() => { Alert.alert('Search') }}>
+            <Icon name='search' color='#00aced' type='FontAwesome' style={styles.searchIcon} />
+          </TouchableHighlight>
           <Text style={styles.text}>{header.name}</Text>
         </ImageBackground>
         <SelectActivities />

@@ -19,7 +19,7 @@ const leftButtonConfig = {
 };
 
 
-function NavBar() {
+function BottomNavBar() {
   return (
     <View >
       <NavigationBar
