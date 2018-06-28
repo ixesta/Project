@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert } from 'react-native';
+import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 import NavigationBar from 'react-native-navbar';
 import SelectHoursDaily from './SelectHoursDaily';
+import SelectActivities from './SelectActivities';
+import BottomNavBar from './BottomNavBar'
 
 const list = [
   {
@@ -46,9 +48,9 @@ const list = [
   }
 ]
 
-let selectedCity = {
+let header = {
   name: 'Manchester',
-  avatar_url: 'http://loremflickr.com/640/480'
+  avatar_url: 'https://live-webadmin-media.s3.amazonaws.com/media/2282/mumbai-625x352.jpg'
 
 }
 
@@ -58,8 +60,12 @@ export default class View3 extends Component {
     return (
 
       <View>
-        <Image />
         <SelectHoursDaily />
+        <ImageBackground style={styles.city} source={{ uri: header.avatar_url }} >
+          <Icon name='search' color='#00aced' type='FontAwesome' style={styles.searchIcon} />
+          <Text style={styles.text}>{header.name}</Text>
+        </ImageBackground>
+        <SelectActivities />
         <ScrollView>
           {list.map((city, i) => {
             return (
@@ -77,6 +83,7 @@ export default class View3 extends Component {
             );
           })}
         </ScrollView>
+        <BottomNavBar />
       </View>
     );
   }
@@ -87,7 +94,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     height: 150,
-    borderBottomWidth: 1,
+    borderBottomWidth: 3,
     borderBottomColor: 'white'
+  },
+
+  city: {
+    alignSelf: 'stretch',
+    height: 80,
+
+  },
+  text: {
+    textAlign: 'center',
+    marginTop: 80
+  },
+  searchIcon: {
+
   }
+
+
 });

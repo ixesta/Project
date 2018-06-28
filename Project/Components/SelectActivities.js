@@ -4,14 +4,14 @@ import NavigationBar from 'react-native-navbar';
 import { Icon, ButtonGroup } from 'react-native-elements';
 
 
-export default class SelectHoursDaily extends Component {
+export default class SelectActivities extends Component {
   render() {
-    const buttons = ['Lazy', 'Active', 'Give me more!']
+    const buttons = ['Atractions', 'Restaurants', 'Hotels', 'Pubs']
 
     return (
-      <ButtonGroup onPress={() => { Alert.alert('Hours selected') }}
+      <ButtonGroup onPress={() => { Alert.alert('Activity group selected') }}
         buttons={buttons}
-        containerStyle={{ height: 60, width: '100%', marginTop: 15 }}
+        containerStyle={{ height: 60, width: '100%', marginTop: 0 }}
       />
     )
   }
