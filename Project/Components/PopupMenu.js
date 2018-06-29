@@ -33,12 +33,16 @@ export default class PopupMenu extends React.Component {
         <Modal
           animationType="fade"
           transparent={false}
-        >
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            alert('Modal has been closed.');
+          }}>
+
           <View style={{ marginTop: 22 }}>
             <View>
               <Text>Choose your pace</Text>
               <TouchableHighlight onPress={() => {
-                Alert.alert('You have chosen 2 per day')
+                this.setModalVisible(!this.state.modalVisible);
               }}>
                 <ImageBackground
                   style={styles.image}
@@ -50,7 +54,7 @@ export default class PopupMenu extends React.Component {
               </TouchableHighlight>
 
               <TouchableHighlight onPress={() => {
-                Alert.alert('You have chosen 3 per day')
+                this.setModalVisible(!this.state.modalVisible);
               }}>
                 <ImageBackground
                   style={styles.image}
@@ -62,7 +66,7 @@ export default class PopupMenu extends React.Component {
               </TouchableHighlight>
 
               <TouchableHighlight onPress={() => {
-                Alert.alert('You have chosen 3 per day')
+                this.setModalVisible(!this.state.modalVisible);
               }}>
                 <ImageBackground
                   style={styles.image}
@@ -79,7 +83,7 @@ export default class PopupMenu extends React.Component {
 
         <TouchableHighlight
           onPress={() => {
-            Alert.alert('testing')
+            this.setModalVisible(true);
           }}>
           <Text>Choose your mode</Text>
         </TouchableHighlight>
