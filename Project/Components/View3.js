@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 import NavigationBar from 'react-native-navbar';
-import SelectHoursDaily from './SelectHoursDaily';
 import SelectActivities from './SelectActivities';
 import BottomNavBar from './BottomNavBar'
 import PopupMenu from './PopupMenu'
@@ -60,7 +59,7 @@ export default class View3 extends Component {
   render() {
     return (
 
-      <View>
+      <View style={styles.container}>
         {/* <SelectHoursDaily /> */}
 
         <ImageBackground style={styles.city} source={{ uri: header.avatar_url }} >
@@ -70,7 +69,8 @@ export default class View3 extends Component {
           <Text style={styles.text}>{header.name}</Text>
         </ImageBackground>
         {/* <SelectActivities /> */}
-        <PopupMenu />
+        <PopupMenu style={styles.popup} />
+
         <ScrollView style={styles.container}>
           {list.map((city, i) => {
             return (
@@ -99,18 +99,18 @@ export default class View3 extends Component {
 const styles = StyleSheet.create({
 
   container: {
-
+    alignSelf: 'stretch'
 
   },
   image: {
-    alignSelf: 'stretch',
+
     height: 150,
     borderBottomWidth: 2,
     borderBottomColor: '#00BFFF',
   },
 
   city: {
-    alignSelf: 'stretch',
+
     height: 80,
     borderBottomWidth: 3,
     borderBottomColor: 'white',
@@ -121,6 +121,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 80,
     color: 'white'
+  },
+  popup: {
+    color: 'red'
   }
 
 
