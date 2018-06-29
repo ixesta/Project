@@ -4,18 +4,22 @@ import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, Touch
 
 const styles = {
   container: {
-    position: 'absolute',
-    marginBottom: 0
+    position: 'absolute'
   },
 };
 
 const rightButtonConfig = {
-  title: 'View Trip',
-  handler: () => alert('Your trip!'),
+  title: 'Map',
+  handler: () => alert('Map!'),
 };
-const leftButtonConfig = {
+
+const centerButtonConfig = {
   title: 'View List',
   handler: () => alert('Activities list!'),
+};
+const leftButtonConfig = {
+  title: 'View Trip',
+  handler: () => alert('Trip iTimeline!'),
 };
 
 
@@ -23,11 +27,15 @@ function BottomNavBar() {
   return (
     <View >
       <NavigationBar
+        style={styles.container}
         rightButton={rightButtonConfig}
+        centerButton={centerButtonConfig}
         leftButton={leftButtonConfig}
       />
     </View>
   );
 }
+
+
 
 export default BottomNavBar;

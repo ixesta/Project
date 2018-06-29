@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert, Text } from 'react-native';
+import { View, ScrollView, Image, Dimensions, StyleSheet, ImageBackground, TouchableHighlight, Alert, Text, Header } from 'react-native';
 import { Icon } from 'react-native-elements';
 import NavigationBar from 'react-native-navbar';
 import SelectActivities from './SelectActivities';
 import BottomNavBar from './BottomNavBar'
-import PopupMenu from './PopupMenu'
+import PopupMenu from './PopupMenu';
+import CityHeader from './CityHeader';
 
 const list = [
   {
@@ -48,11 +49,7 @@ const list = [
   }
 ]
 
-let header = {
-  name: 'Manchester',
-  avatar_url: 'https://live-webadmin-media.s3.amazonaws.com/media/2282/mumbai-625x352.jpg'
 
-}
 
 
 export default class View3 extends Component {
@@ -62,14 +59,10 @@ export default class View3 extends Component {
       <View style={styles.container}>
         {/* <SelectHoursDaily /> */}
 
-        <ImageBackground style={styles.city} source={{ uri: header.avatar_url }} >
-          <TouchableHighlight onPress={() => { Alert.alert('Search') }}>
-            <Icon name='search' color='#00aced' type='FontAwesome' style={styles.searchIcon} />
-          </TouchableHighlight>
-          <Text style={styles.text}>{header.name}</Text>
-        </ImageBackground>
+        <CityHeader />
         {/* <SelectActivities /> */}
-        <PopupMenu style={styles.popup} />
+
+        {/* <PopupMenu style={styles.popup} /> */}
 
         <ScrollView style={styles.container}>
           {list.map((city, i) => {
@@ -99,31 +92,24 @@ export default class View3 extends Component {
 const styles = StyleSheet.create({
 
   container: {
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    backgroundColor: '#00BFFF'
 
   },
   image: {
-
+    flex: 2,
     height: 150,
     borderBottomWidth: 2,
     borderBottomColor: '#00BFFF',
   },
-
-  city: {
-
-    height: 80,
-    borderBottomWidth: 3,
-    borderBottomColor: 'white',
-  },
-
-
   text: {
     textAlign: 'center',
     marginTop: 80,
-    color: 'white'
+    color: '#00BFFF'
   },
   popup: {
-    color: 'red'
+    justifyContent: 'center'
+
   }
 
 
