@@ -6,7 +6,7 @@ import { Icon, ButtonGroup } from 'react-native-elements';
 
 export default class SelectHoursDaily extends Component {
   render() {
-    const buttons = ['Lazy', 'Active', 'Give me more!']
+    const buttons = ['2', '3', '4']
 
     return (
       <ButtonGroup onPress={() => { Alert.alert('Hours selected') }}
@@ -16,3 +16,7 @@ export default class SelectHoursDaily extends Component {
     )
   }
 }
+
+
+
+

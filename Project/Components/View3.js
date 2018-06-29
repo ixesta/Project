@@ -5,6 +5,7 @@ import NavigationBar from 'react-native-navbar';
 import SelectHoursDaily from './SelectHoursDaily';
 import SelectActivities from './SelectActivities';
 import BottomNavBar from './BottomNavBar'
+import PopupMenu from './PopupMenu'
 
 const list = [
   {
@@ -18,7 +19,7 @@ const list = [
 
   },
   {
-    city: 'London',
+    city: 'Leeds',
     avatar_url: 'http://loremflickr.com/640/480'
 
   },
@@ -28,7 +29,7 @@ const list = [
 
   },
   {
-    city: 'London',
+    city: 'Liverpool',
     avatar_url: 'http://loremflickr.com/640/480'
 
   },
@@ -37,7 +38,7 @@ const list = [
     avatar_url: 'http://loremflickr.com/640/480'
 
   }, {
-    city: 'London',
+    city: 'Hull',
     avatar_url: 'http://loremflickr.com/640/480'
 
   },
@@ -60,15 +61,17 @@ export default class View3 extends Component {
     return (
 
       <View>
-        <SelectHoursDaily />
+        {/* <SelectHoursDaily /> */}
+
         <ImageBackground style={styles.city} source={{ uri: header.avatar_url }} >
           <TouchableHighlight onPress={() => { Alert.alert('Search') }}>
             <Icon name='search' color='#00aced' type='FontAwesome' style={styles.searchIcon} />
           </TouchableHighlight>
           <Text style={styles.text}>{header.name}</Text>
         </ImageBackground>
-        <SelectActivities />
-        <ScrollView>
+        {/* <SelectActivities /> */}
+        <PopupMenu />
+        <ScrollView style={styles.container}>
           {list.map((city, i) => {
             return (
               <ImageBackground
@@ -76,9 +79,11 @@ export default class View3 extends Component {
                 style={styles.image}
                 source={{ uri: city.avatar_url }}
               >
+
                 <TouchableHighlight onPress={() => { Alert.alert('Add') }}>
-                  <Icon name='attachment' color='#00aced' />
+                  <Icon name='attachment' color='#00aced' style={styles.addIcon} />
                 </TouchableHighlight>
+                <Text style={styles.text}>British Museum</Text>
 
               </ImageBackground>
 
@@ -92,25 +97,30 @@ export default class View3 extends Component {
 }
 
 const styles = StyleSheet.create({
+
+  container: {
+
+
+  },
   image: {
-    flex: 1,
     alignSelf: 'stretch',
     height: 150,
-    borderBottomWidth: 3,
-    borderBottomColor: 'white'
+    borderBottomWidth: 2,
+    borderBottomColor: '#00BFFF',
   },
 
   city: {
     alignSelf: 'stretch',
     height: 80,
-
+    borderBottomWidth: 3,
+    borderBottomColor: 'white',
   },
+
+
   text: {
     textAlign: 'center',
-    marginTop: 80
-  },
-  searchIcon: {
-
+    marginTop: 80,
+    color: 'white'
   }
 
 

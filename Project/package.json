@@ -22,8 +22,12 @@
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-dropdown": "0.0.6",
     "react-native-elements": "^0.19.1",
+    "react-native-modal-dropdown": "^0.6.2",
     "react-native-navbar": "^2.1.0",
-    "react-native-timeline-listview": "^0.2.3"
+    "react-native-scrolling-menu": "^0.1.1",
+    "react-native-timeline-listview": "^0.2.3",
+    "react-navigation": "^2.5.5"
   }
 }
